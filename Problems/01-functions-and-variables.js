@@ -34,7 +34,16 @@ function hello () {
   // if you want you can declare a string variable first
   // or in this case you can just return the string directly
   // with something like "return 'Hello!'"
-}
+  return 'Hello!"
+};
+
+//Jasper's own code below// 
+let greeting = function() {
+  return "Hello!"
+  console.log("Hello!");
+  //console.log because return does not necessarily print out the string, but return a value only//
+};
+console.log(greeting); 
 
 // Problem 2
 // Improve your initial function by accepting a parameter
@@ -51,7 +60,8 @@ function greeting(name) {
   // say goodbye, I might write
   // let parting = "Goodbye, " + name + "!";
   // (but of course, I actually want to say hello.)
-}
+  return "Hello, " + name + " . Thank you for joining us today! We are happy to have you here."
+};
 
 // Problem 3
 // write a function that takes three parameters and returns an array
@@ -66,8 +76,11 @@ function greeting(name) {
 function returnArray (first, second, third) {
   // you can define the array using "new Array ()" or just "[ , , ]"
   // don't forget to return it
+  return arguments[0]; 
+  return arguments[1];
+  return arguments[2];
 }
-
+console.log(returnArray(1, 2, 3)); 
 
 // Problem 4
 // write a function that, when passed a single argument (an array of 3 or more elements)
@@ -87,8 +100,14 @@ function splitArray (thisArray) {
   // array[0]
   // array[1]
   // etc.
+  if (thisArray.length >= 3) { 
+    return thisArray[0] + " " + thisArray[1] + " was a " + thisArray[2] + "."
+  } else {
+    return undefined; 
+  }
+};
 
-}
+console.log(splitArray(["Italo", "Calvino", "novelist"])); 
 
 // Problem 5
 // A. Write a simple function that takes two arguments.  Subtact the second number from the first.
@@ -101,7 +120,10 @@ function splitArray (thisArray) {
  */
 function subtract(number1, number2) {
   // subtract number2 from number1, and return the result.
+  return arguments[1] - arguments[0]; 
 }
+console.log( subtract(3, 5)); 
+console.log( subtract(4, 2)); 
 
 
 //B. Write a slightly more complex number that only performs the subtraction after testing to be
@@ -109,11 +131,22 @@ function subtract(number1, number2) {
 // "I can only subtract numbers."
 
 function carefulSubtract (first, second) {
+  if (typeof first === "number" && typeof second === "number") {
+    return arguments[1] - arguments[0]; 
+  } else {
+    return "I can only subtract numbers"; 
+  }
   // test to be sure that both first and second are numbers.
   // if so, return the result. Otherwise, return the string
   // "I can only subtract numbers."
+}; 
 
-}
+console.log( carefulSubtract(3, 5)); 
+console.log( carefulSubtract(4, 2)); 
+console.log( carefulSubtract(3, 5)); 
+console.log( carefulSubtract("hello", 2)); 
+console.log( carefulSubtract(2, "hello")); 
+console.log( carefulSubtract("hello", "hello")); 
 
 
 
@@ -131,7 +164,21 @@ function carefulSubtract (first, second) {
 function typeTester (unknown) {
   // use an if/else construction, a switch/case , or any other branching logic. Remember to
   // return a value. 
-}
+  if (typeof unknown === "string") {
+    return unknown + " yay!"; 
+  } else if (typeof unknown === "number") {
+    return unknown * unknown; 
+  } else if (unknown === undefined) { 
+    return "sorry, I can't do anything with an undefioned value."; 
+  } else {
+    return "I don't know how to use that kind of variable."; 
+  }
+}; 
+
+console.log(typeTester("Japanese Pop Music")); 
+console.log(typeTester(12)); 
+console.log(typeTester()); 
+console.log(typeTester(12 != 20)); 
 
 
 
