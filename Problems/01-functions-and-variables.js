@@ -116,7 +116,7 @@ console.log(splitArray(["Italo", "Calvino", "novelist"]));
 function subtract(number1, number2) {
   // subtract number2 from number1, and return the result.
   let result = arguments[1] - arguments[0]; 
-  return result
+  return +result
 };
 console.log( subtract(3, 5)); 
 console.log( subtract(4, 2)); 
