@@ -115,7 +115,7 @@ console.log(splitArray(["Italo", "Calvino", "novelist"]));
  */ 
 function subtract(number1, number2) {
   // subtract number2 from number1, and return the result.
-  let result = (arguments[1] - arguments[0]); 
+  let result = Math.abs(arguments[1] - arguments[0]); 
   return result
 };
 console.log( subtract(3, 5)); 
@@ -127,11 +127,11 @@ console.log( subtract(4, 2));
 // "I can only subtract numbers."
 
 function carefulSubtract (first, second) {
-  let result = (arguments[1] - arguments[0]); 
+  let result = Math.abs(arguments[1] - arguments[0]); 
   if (typeof first === "number" && typeof second === "number") {
     return result; 
   } else {
-    return "I can only subtract numbers"; 
+    return "I can only subtract numbers."; 
   }
   // test to be sure that both first and second are numbers.
   // if so, return the result. Otherwise, return the string
