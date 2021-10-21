@@ -34,16 +34,8 @@ function hello () {
   // if you want you can declare a string variable first
   // or in this case you can just return the string directly
   // with something like "return 'Hello!'"
-  return 'Hello!"
+  return "retun 'Hello!'"
 };
-
-//Jasper's own code below// 
-let greeting = function() {
-  return "Hello!"
-  console.log("Hello!");
-  //console.log because return does not necessarily print out the string, but return a value only//
-};
-console.log(greeting); 
 
 // Problem 2
 // Improve your initial function by accepting a parameter
@@ -60,8 +52,8 @@ function greeting(name) {
   // say goodbye, I might write
   // let parting = "Goodbye, " + name + "!";
   // (but of course, I actually want to say hello.)
-  return "Hello, " + name + " . Thank you for joining us today! We are happy to have you here."
-};
+  return "Hello " + name + " !"; 
+ };
 
 // Problem 3
 // write a function that takes three parameters and returns an array
@@ -76,11 +68,10 @@ function greeting(name) {
 function returnArray (first, second, third) {
   // you can define the array using "new Array ()" or just "[ , , ]"
   // don't forget to return it
-  return arguments[0]; 
-  return arguments[1];
-  return arguments[2];
+  return [arguments[0], arguments[1], arguments[2]]; 
 }
 console.log(returnArray(1, 2, 3)); 
+console.log(returnArray('Tim', 'Horton', 'Donuts')); 
 
 // Problem 4
 // write a function that, when passed a single argument (an array of 3 or more elements)
@@ -114,14 +105,15 @@ console.log(splitArray(["Italo", "Calvino", "novelist"]));
 // Return the result
 /**
  * subtract NUMBER2 from NUMBER1
- * @param {number} number1
+/* * @param {number} number1
  * @param {number} number2
  * @returns {number} the difference of the two parameters
- */
+ */ 
 function subtract(number1, number2) {
   // subtract number2 from number1, and return the result.
-  return arguments[1] - arguments[0]; 
-}
+  let result = arguments[1] - arguments[0]; 
+  return result
+};
 console.log( subtract(3, 5)); 
 console.log( subtract(4, 2)); 
 
@@ -131,8 +123,9 @@ console.log( subtract(4, 2));
 // "I can only subtract numbers."
 
 function carefulSubtract (first, second) {
+  let result = arguments[1] - arguments[0]; 
   if (typeof first === "number" && typeof second === "number") {
-    return arguments[1] - arguments[0]; 
+    return result; 
   } else {
     return "I can only subtract numbers"; 
   }
@@ -169,7 +162,7 @@ function typeTester (unknown) {
   } else if (typeof unknown === "number") {
     return unknown * unknown; 
   } else if (unknown === undefined) { 
-    return "sorry, I can't do anything with an undefioned value."; 
+    return "sorry, I can't do anything with an undefined value."; 
   } else {
     return "I don't know how to use that kind of variable."; 
   }
