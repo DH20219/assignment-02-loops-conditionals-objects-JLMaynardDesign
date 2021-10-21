@@ -52,8 +52,11 @@ function greeting(name) {
   // say goodbye, I might write
   // let parting = "Goodbye, " + name + "!";
   // (but of course, I actually want to say hello.)
-  return "Hello " + name + " !"; 
+  let hi = "Hello " + name + "!";
+  return hi
  };
+
+ console.log(greeting("Atwood")); 
 
 // Problem 3
 // write a function that takes three parameters and returns an array
