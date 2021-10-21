@@ -34,7 +34,7 @@ function hello () {
   // if you want you can declare a string variable first
   // or in this case you can just return the string directly
   // with something like "return 'Hello!'"
-  return "retun 'Hello!'"
+  return "Hello!"
 };
 
 // Problem 2
@@ -52,7 +52,7 @@ function greeting(name) {
   // say goodbye, I might write
   // let parting = "Goodbye, " + name + "!";
   // (but of course, I actually want to say hello.)
-  let hi = "Hello " + name + "!";
+  let hi = "Hello, " + name + "!";
   return hi
  };
 
@@ -115,7 +115,7 @@ console.log(splitArray(["Italo", "Calvino", "novelist"]));
  */ 
 function subtract(number1, number2) {
   // subtract number2 from number1, and return the result.
-  let result = arguments[1] - arguments[0]; 
+  let result = (arguments[1] - arguments[0]); 
   return result
 };
 console.log( subtract(3, 5)); 
@@ -127,7 +127,7 @@ console.log( subtract(4, 2));
 // "I can only subtract numbers."
 
 function carefulSubtract (first, second) {
-  let result = arguments[1] - arguments[0]; 
+  let result = (arguments[1] - arguments[0]); 
   if (typeof first === "number" && typeof second === "number") {
     return result; 
   } else {
