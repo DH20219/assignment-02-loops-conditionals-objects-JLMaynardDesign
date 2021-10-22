@@ -129,7 +129,7 @@ console.log( subtract(4, 2));
 function carefulSubtract (first, second) {
   let result = Math.abs(arguments[1] - arguments[0]); 
   if (typeof first === "number" && typeof second === "number") {
-    return result; 
+    return Math.abs(result); 
   } else {
     return "I can only subtract numbers."; 
   }
