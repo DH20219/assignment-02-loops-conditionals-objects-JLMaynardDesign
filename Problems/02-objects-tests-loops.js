@@ -26,7 +26,15 @@ function returnObject (first, last, prof) {
   // o.firstName = first
   // etc.
   // don't forget to return the object
-}
+  var character = { 
+    firstName: first, 
+    lastName: last, 
+    profession: prof, 
+  }
+  return character; 
+}; 
+
+console.log(returnObject("Italo", "Calvino", "novelist")); 
 
 
 
@@ -62,8 +70,9 @@ function objectToSentence (obj) {
   // obj.propertyname
   // note the quotes in the first options
   // also note: you need to change this next line!!
-  return 'RETURNVALUE';
-}
+  return  obj.firstName + " " + obj.lastName + " was a " + obj.profession + ".";
+};
+
 
 
 // Problem 3
