@@ -30,11 +30,12 @@
  * greet the user!
  * @returns {string} should be exactly "Hello!"
  */
-function hello () {
+function hello() {
   // if you want you can declare a string variable first
   // or in this case you can just return the string directly
   // with something like "return 'Hello!'"
-}
+  return "Hello!"
+};
 
 // Problem 2
 // Improve your initial function by accepting a parameter
@@ -51,7 +52,11 @@ function greeting(name) {
   // say goodbye, I might write
   // let parting = "Goodbye, " + name + "!";
   // (but of course, I actually want to say hello.)
-}
+  let hi = "Hello, " + name + "!";
+  return hi
+};
+
+console.log(greeting("Atwood"));
 
 // Problem 3
 // write a function that takes three parameters and returns an array
@@ -63,11 +68,14 @@ function greeting(name) {
  * @param {} third
  * @returns {array} 
  */
-function returnArray (first, second, third) {
+function returnArray(first, second, third) {
   // you can define the array using "new Array ()" or just "[ , , ]"
   // don't forget to return it
-}
+  return [arguments[0], arguments[1], arguments[2]]
+};
 
+console.log(returnArray(1, 2, 3));
+console.log(returnArray('Tim', 'Horton', 'Donuts'));
 
 // Problem 4
 // write a function that, when passed a single argument (an array of 3 or more elements)
@@ -82,38 +90,60 @@ function returnArray (first, second, third) {
  * @param {} thisArray of minimum length 3
  * @returns {string} a sentence  composed from the first 3 elements of the array
  */
-function splitArray (thisArray) {
+function splitArray(thisArray) {
   // remember you can access individual elements of an array with
   // array[0]
   // array[1]
   // etc.
+  if (thisArray.length >= 3) {
+    return thisArray[0] + " " + thisArray[1] + " was a " + thisArray[2] + "."
+  } else {
+    return undefined;
+  }
+};
 
-}
+console.log(splitArray(["Italo", "Calvino", "novelist"]));
 
 // Problem 5
 // A. Write a simple function that takes two arguments.  Subtact the second number from the first.
 // Return the result
 /**
  * subtract NUMBER2 from NUMBER1
- * @param {number} number1
+/* * @param {number} number1
  * @param {number} number2
  * @returns {number} the difference of the two parameters
  */
 function subtract(number1, number2) {
   // subtract number2 from number1, and return the result.
-}
+  let result = Math.abs(arguments[1] - arguments[0]);
+  return result
+};
+console.log(subtract(3, 5));
+console.log(subtract(4, 2));
 
 
 //B. Write a slightly more complex number that only performs the subtraction after testing to be
 // sure that both parameters are numbers. If so, return the result. If not, return the string
 // "I can only subtract numbers."
 
-function carefulSubtract (first, second) {
+function carefulSubtract(first, second) {
+  let result = Math.abs(arguments[1] - arguments[0]);
+  if (typeof first === "number" && typeof second === "number") {
+    return result
+  } else {
+    return "I can only subtract numbers."
+  }
   // test to be sure that both first and second are numbers.
   // if so, return the result. Otherwise, return the string
   // "I can only subtract numbers."
+};
 
-}
+console.log(carefulSubtract(3, 5));
+console.log(carefulSubtract(4, 2));
+console.log(carefulSubtract(3, 5));
+console.log(carefulSubtract("hello", 2));
+console.log(carefulSubtract(2, "hello"));
+console.log(carefulSubtract("hello", "hello"));
 
 
 
@@ -128,10 +158,24 @@ function carefulSubtract (first, second) {
  * @param {} unknown
  * @returns {} a meessage about unknown, or the square of unknown if it is a number
  */
-function typeTester (unknown) {
+function typeTester(unknown) {
   // use an if/else construction, a switch/case , or any other branching logic. Remember to
   // return a value. 
-}
+  if (typeof unknown === "string") {
+    return unknown + " yay!";
+  } else if (typeof unknown === "number") {
+    return unknown * unknown;
+  } else if (unknown === undefined) {
+    return "sorry, I can't do anything with an undefined value.";
+  } else {
+    return "I don't know how to use that kind of variable.";
+  }
+};
+
+console.log(typeTester("Japanese Pop Music"));
+console.log(typeTester(12));
+console.log(typeTester());
+console.log(typeTester(12 != 20));
 
 
 

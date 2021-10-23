@@ -19,14 +19,22 @@
  * @param {string} profession
  * @returns {object} should have the properties firstName, lastName, and profession
  */
-function returnObject (first, last, prof) {
+function returnObject(first, last, prof) {
   // it might be easiest here to declare a variable
   // var o = {};
   // and then add properties to it one by one
   // o.firstName = first
   // etc.
   // don't forget to return the object
-}
+  var character = {
+    firstName: first,
+    lastName: last,
+    profession: prof,
+  }
+  return character;
+};
+
+console.log(returnObject("Italo", "Calvino", "novelist"));
 
 
 
@@ -55,16 +63,16 @@ function returnObject (first, last, prof) {
  * @param {string} obj.profession - profession of that person
  * @returns {string} a sentence constructed from the object parameters 
  */
-function objectToSentence (obj) {
+function objectToSentence(obj) {
   // remember you can refer to object properties using either of 2 methods
   // obj['propertyname']
   // or
   // obj.propertyname
   // note the quotes in the first options
   // also note: you need to change this next line!!
-  return 'RETURNVALUE';
-}
-
+  const result = firstName + " " + lastName + " was a " + profession + ".";
+  return result;
+};
 
 // Problem 3
 // Write a function that takes an object as a parameter. If the object
@@ -92,15 +100,18 @@ function objectToSentence (obj) {
  * @param {string} obj.profession - profession of that person
  * @returns {string} a sentence constructed from the object parameters
  */
-function wasWriter (obj) {
+function wasWriter(obj) {
   // in an if/else statement
   // it is acceptable to put the
   // "return" statement inside the conditional braces
   // so you can, e.g.,
   // if (...) {return A} else {return B}
-}
-
-
+  if (obj.profession === "novelist") {
+    return obj.firstName + " " + obj.lastName + " was a writer.";
+  } else {
+    return obj.firstName + " " + obj.lastName + " was not a writer.";
+  }
+};
 // Problem 4
 // Write a function that, when passed a string and an integer as parameters,
 // will repeat the string "integer" times
@@ -115,10 +126,13 @@ function wasWriter (obj) {
  * @param {number} aNumber
  * @returns {string}
  */
-function stringIterator (aString, aNumber) {
+function stringIterator(aString, aNumber) {
   // remember a basic "for" loop has this structure:
   // for (var i = 0; i< SOMETHING; i++) {...statements...  };
-}
+  for (var aString = 0; aString <= aNumber.length; aString++) {
+    return aString.repeat(aNumber.length);
+  }
+};
 
 
 // Problem 5
@@ -141,11 +155,13 @@ function stringIterator (aString, aNumber) {
  * @param {number} aNumber
  * @returns   {string}
  */
-function prettyIterator (aString, aNumber) {
+function prettyIterator(aString, aNumber) {
   // be sure to check your results on this one; it has a trick. maybe 2. 
-}
-
-
+  let newString = aString + "\n";
+  for (var aString = 0; aString <= aNumber.length; aString++) {
+    return newString.repeat(aNumber.length);
+  }
+};
 
 // Problem 6
 // Write a function that, when passed an object 
@@ -184,15 +200,25 @@ function prettyIterator (aString, aNumber) {
  * @param {number} pm.to
  * @returns {string} 
  */
-function computeReign (pm) {
+function computeReign(pm) {
   // declare a variable, setting it equal to the
   // length of reign. Now declare another variable,
   // and construct the desired sentence using the appropriate
   // attributes and variables. remember that you may need to
   // "escape" the ' with \'
   // finally, makre sure you return the sentence as the value of the function
-}
+  let lengthOfReign = Math.abs(pm.to - pm.from);
+  const result = pm.fullName + "'s reign was " + lengthOfReign + ' years long.';
+  return result;
+};
 
+var willy = {
+  fullName: "Wilfred Laurier",
+  party: "Liberal",
+  from: 1896,
+  to: 1911
+}
+console.log(computeReign(willy));
 
 
 // Problem 7
@@ -244,7 +270,44 @@ function sentences(list) {
   // is to use the "for...of" loop syntax to loop through the array,
   // and the object[attribute] or object.attribute reference format to access
   // the internal components of the objects.
-}
+  let result = list.fullName + "\'s reign was " + (list.to - list.from) + "years long." + "\n";
+  for (let i = 0; i < list.length; i++) {
+    const result = list.fullName + "\'s reign was " + (list.to - list.from) + "years long." + "\n";
+    return result;
+  }
+};
+
+/* function sentences(list) {
+   let result = list.fullName + "\'s reign was " + (list.to - list.from) + "years long." + "\n"
+   list.forEach(function() { 
+     return result
+   }) 
+ }; */
+
+var ministers = [{
+  fullName: "Wilfred Laurier",
+  party: "Liberal",
+  from: "1896",
+  to: "1911"
+}, {
+  fullName: "Robert L. Borden",
+  party: "Conservative/Unionist",
+  from: "1911",
+  to: "1920"
+}, {
+  fullName: "Arthur Meighen",
+  party: "Conservative",
+  from: "1920",
+  to: "1921"
+}, {
+  fullName: "William Lyon Mackenzie King",
+  party: "Liberal",
+  from: "1921",
+  to: "1926"
+}];
+
+console.log(sentences(ministers));
+
 
 // DO NOT MODIFY -- FOR AUTOMATED TESTING ONLY
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
