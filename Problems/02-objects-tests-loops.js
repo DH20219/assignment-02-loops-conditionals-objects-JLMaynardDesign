@@ -129,7 +129,7 @@ function wasWriter(obj) {
 function stringIterator(aString, aNumber) {
   // remember a basic "for" loop has this structure:
   // for (var i = 0; i< SOMETHING; i++) {...statements...  };
-  for (var aString = 0; i <= aNumber.length; i++) {
+  for (var aString = 0; aString <= aNumber.length; aString++) {
     return aString.repeat(aNumber.length);
   }
 };
@@ -158,7 +158,7 @@ function stringIterator(aString, aNumber) {
 function prettyIterator(aString, aNumber) {
   // be sure to check your results on this one; it has a trick. maybe 2. 
   let newString = aString + "\n";
-  for (var aString = 0; i <= aNumber.length; i++) {
+  for (var aString = 0; aString <= aNumber.length; aString++) {
     return newString.repeat(aNumber.length);
   }
 };
@@ -208,7 +208,7 @@ function computeReign(pm) {
   // "escape" the ' with \'
   // finally, makre sure you return the sentence as the value of the function
   let lengthOfReign = Math.abs(pm.to - pm.from);
-  const result = '"' + pm.fullName + "'s reign was " + lengthOfReign + ' years long."';
+  const result = pm.fullName + "'s reign was " + lengthOfReign + ' years long.';
   return result;
 };
 
